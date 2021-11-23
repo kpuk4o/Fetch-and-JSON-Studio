@@ -7,12 +7,12 @@ window.addEventListener('load',function(){
         let container = document.getElementById("container")
         let count = document.getElementById('count')
         count.innerHTML += `${json.length}`
-        let astronauts = ''
+        let astronautInfo = ''
         json.sort(function(a,b){
             return (a.hoursInSpace < b.hoursInSpace) ? 1 : -1
         })
         for  (let astronaut of json){
-            astronauts += `<div class="astronaut">
+            astronautInfo += `<div class="astronaut">
                 <div class = "bio">
                     <h3>${astronaut.firstName} ${astronaut.lastName}</h3>
                     <ul>
@@ -24,6 +24,6 @@ window.addEventListener('load',function(){
                 <img src="${astronaut.picture}" alt="" class="avatar" />
             </div>`
         }
-        container.innerHTML = astronauts + `<p>Astronaut Count: ${json.length} </p>`;
+        container.innerHTML = astronautInfo + `<p>Astronaut Count: ${json.length} </p>`;
     })
 })
